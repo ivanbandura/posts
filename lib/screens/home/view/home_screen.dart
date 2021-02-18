@@ -36,14 +36,12 @@ class _Body extends StatelessWidget {
     return FutureBuilder(
       future: fetchPosts(),
       builder: (context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.done &&
-            snapshot.hasData) {
-          return PostsList(posts: snapshot.data);
-        } else {
-          return Center(
-            child: CircularProgressIndicator(),
-          );
-        }
+        return snapshot.connectionState == ConnectionState.done &&
+                snapshot.hasData
+            ? PostsList(posts: snapshot.data)
+            : Center(
+                child: CircularProgressIndicator(),
+              );
       },
     );
   }

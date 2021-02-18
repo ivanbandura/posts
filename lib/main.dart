@@ -5,5 +5,7 @@ import 'package:posts/app.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-  runApp(MyPostsApp());
+  runApp(
+    MyPostsApp(),
+  );
 }
