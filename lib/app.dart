@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:posts/core/app_router.dart';
+import 'package:posts/core/app_theme.dart';
 
 class MyPostsApp extends StatelessWidget {
   @override
@@ -8,11 +9,7 @@ class MyPostsApp extends StatelessWidget {
       title: 'Posts',
       debugShowCheckedModeBanner: false,
       routes: AppRouter.routes,
-      theme: ThemeData(
-        primaryColor: Colors.green,
-        accentColor: Colors.green,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
+      theme: AppTheme.theme,
       home: AppRouter.routes["/home"](context),
     );
   }
